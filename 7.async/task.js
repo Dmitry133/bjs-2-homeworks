@@ -34,9 +34,9 @@ class AlarmClock {
         } else {
             this.intervalId = setInterval(() => {
                 this.alarmCollection.forEach(element => {
-                    if (this.time === this.getCurrentFormattedTime()) {
-                        alarmTime.canCall = false;
-                        alarmTime.callback();
+                    if (element.time === this.getCurrentFormattedTime()) {
+                        element.canCall = false;
+                        element.callback();
                     };
                 });
             }, 1000);
